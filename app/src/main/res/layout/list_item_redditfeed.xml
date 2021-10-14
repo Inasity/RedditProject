@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+    <data>
+
+        <variable
+            name="child"
+            type="com.example.android.redditproject.network.Child" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/whiteBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/capture"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/viewInBrowserButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/CommentText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_open_in_browser_24"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="236dp"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:authorName="@{child.data.author}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Author: McWalnut McGee" />
+
+        <TextView
+            android:id="@+id/title_feed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{child.data.title}"
+            android:textColor="@color/hyperlink_blue"
+            android:textColorLink="@color/hyperlink_blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/CommentText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/author_name"
+            app:layout_constraintTop_toBottomOf="@+id/author_name"
+            tools:text="Blah blah blah blah blah blah blah blah blah blah" />
+
+        <TextView
+            android:id="@+id/viewBrowser"
+            android:layout_width="110dp"
+            android:layout_height="17dp"
+            android:layout_marginBottom="1dp"
+            android:autoLink="all"
+            android:text="@string/view_in_browser"
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textColorLink="@color/hyperlink_blue"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewInBrowserButton"
+            app:layout_constraintStart_toStartOf="@+id/title_feed" />
+
+        <TextView
+            android:id="@+id/CommentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/hyperlink_blue"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:numOfComments="@{child.data.num_comments}"
+            tools:text="20 Comments" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

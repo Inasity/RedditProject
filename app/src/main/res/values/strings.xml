@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reddit Project</string>
+    <string name="author_name">Author: %1$s</string>
+    <string name="title_hyperlink"><a hyperlink="">%1$s</a></string>
+    <string name="reddit">Reddit</string>
+    <string name="view_in_browser">View In Browser</string>
+</resources>
